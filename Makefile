@@ -3,7 +3,7 @@ DONE="${CHECK} DONE."
 
 all: install
 
-install: init-submodules install-js2mode install-go-tools install-helm
+install: init-submodules install-js2mode install-helm
 	@mkdir libs/color-theme/themes
 	@echo $(DONE)
 

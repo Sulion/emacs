@@ -8,7 +8,7 @@
 (defconst +emacs-snippets-dir+ (concat +emacs-dir+ "/snippets"))
 
 ;; new projects will be created under this directory
-(defconst +dev-dir+ (concat +home-dir+ "/dev"))
+(defconst +dev-dir+ (concat +home-dir+ "/src"))
 
 (defun add-load-path (p)
   (add-to-list 'load-path (concat +emacs-dir+ "/" p)))
@@ -59,3 +59,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.org/packages/")
+   t)
+  (package-initialize))
